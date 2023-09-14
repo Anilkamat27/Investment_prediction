@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Price Prediction</title>
+    <style>
+        body {
+            background-color: #041E42;
+            color: #ADD8E6; /* Default text color */
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #002D62;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #041E42;
+        }
+
+        /* Define CSS classes for text color */
+        .green {
+            color: green; /* Green text for higher price */
+        }
+
+        .red {
+            color: red; /* Red text for lower price */
+        }
+
+        .predicted-price {
+            text-align: center;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Stock Price Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="stock_symbol">Enter Stock Symbol (e.g., ADANIENT.NS):</label>
+        <input type="text" id="stock_symbol" name="stock_symbol" required>
+        <input type="submit" value="Predict">
+    </form>
+    <p class="predicted-price">
+        Predicted Next Day's {{ stock_symbol }} Stock Price:<br>
+        <span class="{{ color_class }}">{{ prediction }}</span>
+    </p>
+</body>
+</html>
