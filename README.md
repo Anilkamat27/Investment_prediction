@@ -9,7 +9,7 @@ It checks for stationarity and identifies the best values for 'p,' 'd,' and 'q' 
 
 ### create a environment
 ```
-conda create -p venv python==3.8
+conda create -p venv python==3.11
 conda activate venv/
 ```
 ### Install all necessary libraries
